@@ -3,38 +3,38 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Olay × TikTok Shop — Operator Playbook 2026</title>
+<title>Olay × TikTok Shop: Operator Playbook 2026</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 <style>
-  /* ── EXTENDED STYLES ── */
+  /*  EXTENDED STYLES  */
   .tribes-grid {
     display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px;
   }
   .tribe-card {
-    background: var(--bg3); border: 1px solid var(--border);
+    background: var(--bg2); border: 1px solid var(--border);
     border-radius: 12px; padding: 24px; position: relative;
     overflow: hidden; transition: border-color 0.2s;
   }
-  .tribe-card:hover { border-color: var(--border-pink); }
+  .tribe-card:hover { border-color: var(--border-red); }
   .tribe-card::after {
     content: ''; position: absolute; bottom: 0; left: 0; right: 0;
-    height: 2px; background: var(--gradient);
+    height: 2px; background: var(--olay-red);
     transform: scaleX(0); transition: transform 0.25s; transform-origin: left;
   }
   .tribe-card:hover::after { transform: scaleX(1); }
   .tribe-tag {
     display: inline-block; font-size: 0.6875rem; font-weight: 700;
     letter-spacing: 1.5px; text-transform: uppercase;
-    font-family: monospace; color: var(--olay-pink);
-    background: rgba(233,27,138,0.1); border: 1px solid rgba(233,27,138,0.2);
+    font-family: monospace; color: var(--olay-red);
+    background: var(--olay-red-pale); border: 1px solid var(--border-red);
     padding: 3px 10px; border-radius: 20px; margin-bottom: 10px;
   }
   .tribe-name { font-size: 1.125rem; font-weight: 700; color: var(--text);
     margin-bottom: 6px; }
   .tribe-spike { font-size: 0.8125rem; font-weight: 700;
-    color: var(--olay-coral); margin-bottom: 10px; font-family: monospace; }
+    color: #B45309; margin-bottom: 10px; font-family: monospace; }
   .tribe-desc { font-size: 0.875rem; color: var(--muted); line-height: 1.55; margin-bottom: 14px; }
   .tribe-hooks { list-style: none; }
   .tribe-hooks li {
@@ -43,7 +43,7 @@
     padding-left: 14px; position: relative;
   }
   .tribe-hooks li::before { content: '→'; position: absolute; left: 0;
-    color: var(--olay-pink); font-weight: 700; font-size: 0.75rem; }
+    color: var(--olay-red); font-weight: 700; font-size: 0.75rem; }
   .tribe-hooks li:last-child { border-bottom: none; }
 
   /* AFFILIATE PYRAMID */
@@ -53,21 +53,20 @@
   .pyramid-visual { display: flex; flex-direction: column; gap: 10px; }
   .pyramid-row {
     border-radius: 10px; padding: 20px 22px;
-    border: 1px solid var(--border); position: relative;
+    background: var(--bg); border: 1px solid var(--border); position: relative;
     overflow: hidden;
   }
   .pyramid-row::before {
     content: ''; position: absolute; left: 0; top: 0; bottom: 0;
     width: 3px;
   }
-  .pyramid-row.tier-macro::before { background: var(--gradient); }
-  .pyramid-row.tier-skin::before  { background: var(--olay-pink); }
-  .pyramid-row.tier-micro::before { background: var(--olay-coral); }
+  .pyramid-row.tier-macro::before { background: var(--olay-red); }
+  .pyramid-row.tier-skin::before  { background: var(--olay-red); }
+  .pyramid-row.tier-micro::before { background: #B45309; }
   .pyramid-row.tier-ugc::before   { background: var(--faint); }
   .pyramid-pct {
     font-size: 1.75rem; font-weight: 800; letter-spacing: -1px;
-    background: var(--gradient); -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent; background-clip: text;
+    color: var(--olay-red);
     line-height: 1; margin-bottom: 4px;
   }
   .pyramid-row.tier-micro .pyramid-pct,
@@ -80,12 +79,12 @@
 
   .pyramid-detail { display: flex; flex-direction: column; gap: 14px; }
   .pdeet-card {
-    background: var(--bg3); border: 1px solid var(--border);
+    background: var(--bg2); border: 1px solid var(--border);
     border-radius: 10px; padding: 20px;
   }
   .pdeet-label { font-size: 0.6875rem; font-weight: 700; letter-spacing: 1.5px;
     text-transform: uppercase; font-family: monospace;
-    color: var(--olay-pink); margin-bottom: 8px; }
+    color: var(--olay-red); margin-bottom: 8px; }
   .pdeet-title { font-size: 0.9375rem; font-weight: 700; color: var(--text);
     margin-bottom: 6px; }
   .pdeet-desc { font-size: 0.8125rem; color: var(--muted); line-height: 1.55; }
@@ -101,8 +100,7 @@
   .cal-item:last-child { border-bottom: none; }
   .cal-month {
     font-size: 0.875rem; font-weight: 700;
-    background: var(--gradient); -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent; background-clip: text;
+    color: var(--olay-red);
     text-transform: uppercase; letter-spacing: 1px;
     font-family: monospace; padding-top: 2px;
   }
@@ -113,11 +111,11 @@
   .cal-creators { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px; }
   .creator-chip {
     font-size: 0.75rem; font-weight: 500;
-    background: rgba(255,255,255,0.05); border: 1px solid var(--border);
+    background: var(--bg3); border: 1px solid var(--border);
     color: var(--muted); padding: 3px 10px; border-radius: 20px;
   }
-  .creator-chip.featured { background: rgba(233,27,138,0.08);
-    border-color: rgba(233,27,138,0.25); color: var(--olay-pink); }
+  .creator-chip.featured { background: var(--olay-red-pale);
+    border-color: var(--border-red); color: var(--olay-red); }
   .cal-hashtags { font-size: 0.8125rem; color: var(--faint); font-family: monospace; }
   .cal-signal {
     display: inline-flex; align-items: center; gap: 6px;
@@ -126,22 +124,21 @@
     border: 1px solid rgba(0,200,100,0.2);
     padding: 3px 10px; border-radius: 20px; margin-bottom: 10px;
   }
-  .cal-signal::before { content: '●'; font-size: 0.5rem; }
+  .cal-signal::before { content: ''; font-size: 0.5rem; }
 
   /* DIGITAL PLAYBOOK PILLARS */
   .pillars-grid {
     display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;
   }
   .pillar-card {
-    background: var(--bg3); border: 1px solid var(--border);
+    background: var(--bg2); border: 1px solid var(--border);
     border-radius: 12px; padding: 24px; text-align: center;
     transition: border-color 0.2s, transform 0.2s;
   }
-  .pillar-card:hover { border-color: var(--border-pink); transform: translateY(-3px); }
+  .pillar-card:hover { border-color: var(--border-red); transform: translateY(-3px); }
   .pillar-num {
     font-size: 2rem; font-weight: 800; letter-spacing: -1px;
-    background: var(--gradient); -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent; background-clip: text;
+    color: var(--olay-red);
     margin-bottom: 10px; line-height: 1;
   }
   .pillar-name { font-size: 0.875rem; font-weight: 700; color: var(--text);
@@ -151,18 +148,18 @@
   /* OPPORTUNITIES */
   .opp-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
   .opp-card {
-    background: rgba(233,27,138,0.04);
-    border: 1px solid rgba(233,27,138,0.15);
+    background: var(--olay-red-pale);
+    border: 1px solid var(--border-red);
     border-radius: 12px; padding: 28px;
     position: relative; overflow: hidden;
   }
   .opp-card::before {
     content: '→'; position: absolute; top: 20px; right: 20px;
-    font-size: 1.25rem; color: rgba(233,27,138,0.3); font-weight: 700;
+    font-size: 1.25rem; color: rgba(200,16,46,0.3); font-weight: 700;
   }
   .opp-tag { font-size: 0.6875rem; font-weight: 700; letter-spacing: 1.5px;
     text-transform: uppercase; font-family: monospace;
-    color: var(--olay-coral); margin-bottom: 12px; }
+    color: #B45309; margin-bottom: 12px; }
   .opp-title { font-size: 1.05rem; font-weight: 700; color: var(--text);
     margin-bottom: 8px; line-height: 1.3; }
   .opp-desc { font-size: 0.875rem; color: var(--muted); line-height: 1.6; }
@@ -173,19 +170,19 @@
     gap: 12px; margin-top: 32px;
   }
   .tentpole {
-    background: var(--bg3); border: 1px solid var(--border);
+    background: var(--bg2); border: 1px solid var(--border);
     border-radius: 10px; padding: 20px; text-align: center;
   }
   .tentpole-month { font-size: 0.6875rem; font-weight: 700; letter-spacing: 1.5px;
     text-transform: uppercase; font-family: monospace;
-    color: var(--olay-pink); margin-bottom: 6px; }
+    color: var(--olay-red); margin-bottom: 6px; }
   .tentpole-name { font-size: 0.9375rem; font-weight: 700; color: var(--text);
     margin-bottom: 4px; }
   .tentpole-note { font-size: 0.75rem; color: var(--muted); }
 
   .path-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 32px; }
   .path-card {
-    background: var(--bg3); border: 1px solid var(--border);
+    background: var(--bg2); border: 1px solid var(--border);
     border-radius: 12px; padding: 24px;
   }
   .path-pct {
@@ -202,8 +199,8 @@
     padding: 5px 0; border-bottom: 1px solid var(--border);
     padding-left: 14px; position: relative;
   }
-  .path-channels li::before { content: '▸'; position: absolute; left: 0;
-    color: var(--olay-pink); font-size: 0.625rem; top: 7px; }
+  .path-channels li::before { content: ''; position: absolute; left: 0;
+    color: var(--olay-red); font-size: 0.625rem; top: 7px; }
   .path-channels li:last-child { border-bottom: none; }
 
   @media (max-width: 1080px) {
@@ -214,7 +211,7 @@
 </head>
 <body>
 
-<!-- ── NAV ── -->
+<!--  NAV  -->
 <nav class="nav">
   <div class="nav-brand">
     <span class="dot"></span>
@@ -236,9 +233,9 @@
   <div class="nav-badge">Internal · May 2026</div>
 </nav>
 
-<!-- ── HERO ── -->
+<!--  HERO  -->
 <div class="hero">
-  <div class="hero-eyebrow">Olay × Pattern — Internal Operator Playbook</div>
+  <div class="hero-eyebrow">Olay × Pattern: Internal Operator Playbook</div>
   <h1>Everything you need to run <span class="gradient-text">Olay on TikTok&nbsp;Shop.</span></h1>
   <p class="hero-sub">
     Target: Mach 10. Super Serum national relaunch H2 2026. 4 hero SKUs, real creator names, the full H2 campaign calendar, and Pattern's 3 winning plays.
@@ -246,11 +243,11 @@
   <div class="hero-meta">
     <div class="hero-meta-item">
       <strong>Goal</strong>
-      Mach 10 — 10% FY revenue growth
+      Mach 10: 10% FY revenue growth
     </div>
     <div class="hero-meta-item">
       <strong>Current projection</strong>
-      6% — gap to close via TikTok + affiliates
+      6%: gap to close via TikTok + affiliates
     </div>
     <div class="hero-meta-item">
       <strong>Core audience</strong>
@@ -258,12 +255,12 @@
     </div>
     <div class="hero-meta-item">
       <strong>Confidential</strong>
-      Internal use only — Pattern × Olay
+      Internal use only: Pattern × Olay
     </div>
   </div>
 </div>
 
-<!-- ── STATS BAR ── -->
+<!--  STATS BAR  -->
 <div class="stats-bar">
   <div class="stat-cell">
     <div class="stat-value">Mach 10</div>
@@ -278,7 +275,7 @@
   <div class="stat-cell">
     <div class="stat-value">+900%</div>
     <div class="stat-label">Longevity interest spike</div>
-    <div class="stat-note">P52W — biggest trend signal in the category</div>
+    <div class="stat-note">P52W: biggest trend signal in the category</div>
   </div>
   <div class="stat-cell">
     <div class="stat-value">12% BE</div>
@@ -288,25 +285,25 @@
   <div class="stat-cell">
     <div class="stat-value">H2 '26</div>
     <div class="stat-label">Super Serum relaunch</div>
-    <div class="stat-note">National relaunch — the hero moment of the year</div>
+    <div class="stat-note">National relaunch: the hero moment of the year</div>
   </div>
 </div>
 
-<!-- ── OVERALL STRATEGY ── -->
+<!--  OVERALL STRATEGY  -->
 <section id="strategy">
-  <div class="section-eyebrow">Section 00 — Overall Strategy</div>
+  <div class="section-eyebrow">Section 00: Overall Strategy</div>
   <h2 class="section-title">The brief.</h2>
   <p class="section-sub">This is where Olay is, where they're going, and how Pattern fits in.</p>
 
   <div class="callout">
-    <strong>North star:</strong> Own the anti-aging conversation. Lead with science and efficacy. Use TikTok + affiliates to drive talkability at scale. Do <em>not</em> compete on price with indie brands — Olay wins on clinical proof, not on being the cheapest option.
+    <strong>North star:</strong> Own the anti-aging conversation. Lead with science and efficacy. Use TikTok + affiliates to drive talkability at scale. Do <em>not</em> compete on price with indie brands: Olay wins on clinical proof, not on being the cheapest option.
   </div>
 
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:32px;">
     <div class="card" style="background:var(--bg3);border:1px solid var(--border);border-radius:12px;padding:28px;">
       <div class="card-accent"></div>
       <h4 style="color:var(--text);margin-bottom:16px;">Core audience: Skin-intellectuals</h4>
-      <p>Innovation-seekers who research, value clinical proof, and influence their peers. They don't just buy products — they <strong style="color:var(--text)">advocate</strong> for them. These are the people who will create organic UGC, leave reviews, and pull friends into the Olay ecosystem.</p>
+      <p>Innovation-seekers who research, value clinical proof, and influence their peers. They don't just buy products: they <strong style="color:var(--text)">advocate</strong> for them. These are the people who will create organic UGC, leave reviews, and pull friends into the Olay ecosystem.</p>
     </div>
     <div class="card" style="background:var(--bg3);border:1px solid var(--border);border-radius:12px;padding:28px;">
       <div class="card-accent"></div>
@@ -335,9 +332,9 @@
   </div>
 </section>
 
-<!-- ── PRODUCTS ── -->
+<!--  PRODUCTS  -->
 <section id="products">
-  <div class="section-eyebrow">Section 01 — Product Portfolio</div>
+  <div class="section-eyebrow">Section 01: Product Portfolio</div>
   <h2 class="section-title">The hero SKUs.</h2>
   <p class="section-sub">
     Red Jar = anti-aging. Purple Jar = retinol. Super Serum = H2 2026 national relaunch. Know the product story before you brief a single creator.
@@ -349,41 +346,41 @@
 
   <div class="products-grid">
 
-    <!-- SUPER SERUM — THE RELAUNCH HERO -->
-    <div class="product-card hero-sku" style="border-color:rgba(255,107,53,0.4);">
+    <!-- SUPER SERUM: THE RELAUNCH HERO -->
+    <div class="product-card hero-sku" style="border-color:rgba(200,16,46,0.5);">
       <div class="product-header">
         <div>
-          <div class="product-num">SKU 01 — RELAUNCH HERO</div>
+          <div class="product-num">SKU 01: RELAUNCH HERO</div>
           <div class="product-name">Olay Super Serum</div>
           <div class="product-price">National relaunch · H2 2026</div>
         </div>
-        <span class="product-badge badge-new">⚡ RELAUNCH</span>
+        <span class="product-badge badge-new"> RELAUNCH</span>
       </div>
       <div class="product-body">
-        <div class="creator-angle" style="background:rgba(255,107,53,0.06);border-color:rgba(255,107,53,0.2);margin-bottom:16px;">
-          <div class="creator-angle-label" style="color:var(--olay-coral);">Hero message</div>
+        <div class="creator-angle" style="background:var(--olay-red-pale);border-color:rgba(200,16,46,0.2);margin-bottom:16px;">
+          <div class="creator-angle-label" style="color:#B45309;">Hero message</div>
           <p style="font-size:1rem;font-weight:700;color:var(--text);">"Bounce Back to Plump, Healthy Skin"</p>
           <p style="margin-top:6px;">RTB: Supercharged 5-in-1 formula to re-energize tired cells at the cellular level.</p>
         </div>
         <ul class="product-facts">
-          <li><strong>5-in-1 formula</strong> — multi-action in a single step</li>
-          <li>Re-energizes tired cells at the <strong>cellular level</strong> — science-forward claim</li>
-          <li>"Bounce Back" = skin resilience, not age-reversal — resonates with 25–45</li>
-          <li>Facial Wash + Cleanser line extension — full regimen opportunity</li>
-          <li><strong>AIGC opportunity:</strong> Brand wants AI-generated content — early-mover advantage for Pattern</li>
+          <li><strong>5-in-1 formula</strong>: multi-action in a single step</li>
+          <li>Re-energizes tired cells at the <strong>cellular level</strong>: science-forward claim</li>
+          <li>"Bounce Back" = skin resilience, not age-reversal: resonates with 25–45</li>
+          <li>Facial Wash + Cleanser line extension: full regimen opportunity</li>
+          <li><strong>AIGC opportunity:</strong> Brand wants AI-generated content: early-mover advantage for Pattern</li>
         </ul>
         <div class="hooks-section">
           <div class="hooks-label">Approved content angles</div>
           <div class="hook">
-            <div class="hook-text">Proactive Skincare — "Start before you need to"</div>
+            <div class="hook-text">Proactive Skincare: "Start before you need to"</div>
             <div class="hook-note">Younger audiences, prevention-first framing. Huge with 23–34 demographic.</div>
           </div>
           <div class="hook">
-            <div class="hook-text">Aging Gracefully — preferred over "old, but not old"</div>
+            <div class="hook-text">Aging Gracefully: preferred over "old, but not old"</div>
             <div class="hook-note">Framing matters. "Gracefully" not "fight aging." Resonates with 35–50.</div>
           </div>
           <div class="hook">
-            <div class="hook-text">Runner Tok / Self-Care Investor — "Your skin trains too"</div>
+            <div class="hook-text">Runner Tok / Self-Care Investor: "Your skin trains too"</div>
             <div class="hook-note">Performance lifestyle crossover. Huge with fitness creators who aren't skincare-first.</div>
           </div>
         </div>
@@ -400,7 +397,7 @@
     <div class="product-card hero-sku">
       <div class="product-header">
         <div>
-          <div class="product-num">SKU 02 — RED JAR</div>
+          <div class="product-num">SKU 02: RED JAR</div>
           <div class="product-name">Regenerist Micro-Sculpting Cream</div>
           <div class="product-price">$24.99 · New formula Jan 2026</div>
         </div>
@@ -408,16 +405,16 @@
       </div>
       <div class="product-body">
         <ul class="product-facts">
-          <li><strong>Triple Collagen Peptide</strong> — most significant formula upgrade in 20+ years</li>
-          <li>Niacinamide + Pro-Vitamin B5 — cellular-level strengthening</li>
+          <li><strong>Triple Collagen Peptide</strong>: most significant formula upgrade in 20+ years</li>
+          <li>Niacinamide + Pro-Vitamin B5: cellular-level strengthening</li>
           <li><strong>97% of women</strong> saw visible results in clinical testing</li>
           <li><strong>50%+ delayed or postponed cosmetic procedures</strong> after use (survey, n=1,900)</li>
           <li>Good Housekeeping <strong>2026 Beauty Award</strong> winner</li>
-          <li>Sarah Michelle Gellar (SMG) — active brand ambassador</li>
+          <li>Sarah Michelle Gellar (SMG): active brand ambassador</li>
         </ul>
         <div class="creator-angle">
           <div class="creator-angle-label">Creator angle</div>
-          <p>This is the Red Jar — Olay's most iconic anti-aging product. The new formula gives it fresh news. The SMG partnership gives it cultural relevance with Millennials. "50% delayed Botox" is a headline stat — use it carefully but it converts extremely well.</p>
+          <p>This is the Red Jar: Olay's most iconic anti-aging product. The new formula gives it fresh news. The SMG partnership gives it cultural relevance with Millennials. "50% delayed Botox" is a headline stat: use it carefully but it converts extremely well.</p>
         </div>
         <div class="hooks-section">
           <div class="hooks-label">Top hooks</div>
@@ -426,12 +423,12 @@
             <div class="hook-note">Clinical survey stat. High shareability. Use with screen-record or stat graphic.</div>
           </div>
           <div class="hook">
-            <div class="hook-text">"Olay just reformulated their most iconic cream — Good Housekeeping agreed"</div>
+            <div class="hook-text">"Olay just reformulated their most iconic cream: Good Housekeeping agreed"</div>
             <div class="hook-note">Award + newness = credibility + curiosity. Works for both existing fans and new buyers.</div>
           </div>
         </div>
         <div class="pill-row">
-          <span class="pill pill-pink">Triple Collagen Peptide</span>
+          <span class="pill pill-red">Triple Collagen Peptide</span>
           <span class="pill pill-green">2026 Award winner</span>
           <span class="pill pill-neutral">SMG ambassador</span>
         </div>
@@ -442,7 +439,7 @@
     <div class="product-card hero-sku">
       <div class="product-header">
         <div>
-          <div class="product-num">SKU 03 — PURPLE JAR</div>
+          <div class="product-num">SKU 03: PURPLE JAR</div>
           <div class="product-name">Retinol24 Night Serum</div>
           <div class="product-price">$24.99 · 1.3 fl oz</div>
         </div>
@@ -450,20 +447,20 @@
       </div>
       <div class="product-body">
         <ul class="product-facts">
-          <li><strong>Retinol + Niacinamide</strong> — same combo as La Roche-Posay at 1/3 the price</li>
-          <li>Reduces wrinkles in <strong>7 nights</strong> — visible results timeline = easy content</li>
-          <li>No flaking, no purging — <strong>sensitive skin safe</strong></li>
-          <li>#1 Most Awarded Retinol — dermatologist tested</li>
-          <li><strong>87.8M TikTok posts</strong> on #OlayRetinol24 — organic engine is already running</li>
+          <li><strong>Retinol + Niacinamide</strong>: same combo as La Roche-Posay at 1/3 the price</li>
+          <li>Reduces wrinkles in <strong>7 nights</strong>: visible results timeline = easy content</li>
+          <li>No flaking, no purging: <strong>sensitive skin safe</strong></li>
+          <li>#1 Most Awarded Retinol: dermatologist tested</li>
+          <li><strong>87.8M TikTok posts</strong> on #OlayRetinol24: organic engine is already running</li>
         </ul>
         <div class="creator-angle">
           <div class="creator-angle-label">Creator angle</div>
-          <p>The Purple Jar is Olay's TikTok proof-of-concept. 87.8M organic posts means creators are making content without being paid. The "7 Night Challenge" format is proven. This is the entry product — once someone tries Retinol24, they're in the Olay ecosystem.</p>
+          <p>The Purple Jar is Olay's TikTok proof-of-concept. 87.8M organic posts means creators are making content without being paid. The "7 Night Challenge" format is proven. This is the entry product: once someone tries Retinol24, they're in the Olay ecosystem.</p>
         </div>
         <div class="hooks-section">
           <div class="hooks-label">Top hooks</div>
           <div class="hook">
-            <div class="hook-text">"I tried retinol for 7 nights straight — here's what actually happened to my skin"</div>
+            <div class="hook-text">"I tried retinol for 7 nights straight: here's what actually happened to my skin"</div>
             <div class="hook-note">Best-performing format historically. Before/after drives saves. 7-night structure is easy to film.</div>
           </div>
           <div class="hook">
@@ -472,7 +469,7 @@
           </div>
         </div>
         <div class="pill-row">
-          <span class="pill pill-pink">87.8M organic posts</span>
+          <span class="pill pill-red">87.8M organic posts</span>
           <span class="pill pill-coral">7-night results</span>
           <span class="pill pill-green">Sensitive skin</span>
           <span class="pill pill-neutral">Derm tested</span>
@@ -484,27 +481,27 @@
     <div class="product-card">
       <div class="product-header">
         <div>
-          <div class="product-num">SKU 04 — UPGRADE</div>
+          <div class="product-num">SKU 04: UPGRADE</div>
           <div class="product-name">Regenerist Retinol24 MAX Serum</div>
           <div class="product-price">$28.99 · 1.3 fl oz</div>
         </div>
-        <span class="product-badge" style="background:rgba(255,107,53,0.15);color:var(--olay-coral);border:1px solid rgba(255,107,53,0.3);">Max Strength</span>
+        <span class="product-badge" style="background:var(--olay-red-pale);color:#B45309;border:1px solid var(--border-red);">Max Strength</span>
       </div>
       <div class="product-body">
         <ul class="product-facts">
-          <li>Higher-potency retinol — for retinol-tolerant skin</li>
+          <li>Higher-potency retinol: for retinol-tolerant skin</li>
           <li>Best positioned as a <strong>loyalty upgrade</strong> from Retinol24</li>
           <li>Pairs well with the new MSC as a complete anti-aging regimen</li>
           <li>Target creators with skincare-savvy 35+ audiences</li>
         </ul>
         <div class="creator-angle">
           <div class="creator-angle-label">Creator angle</div>
-          <p>Use as an upsell and upgrade narrative. "My skin is retinol-ready — here's what I moved to." Works best for creators who have already documented a Retinol24 journey and are showing progression.</p>
+          <p>Use as an upsell and upgrade narrative. "My skin is retinol-ready: here's what I moved to." Works best for creators who have already documented a Retinol24 journey and are showing progression.</p>
         </div>
         <div class="hooks-section">
           <div class="hooks-label">Top hook</div>
           <div class="hook">
-            <div class="hook-text">"I've been using Olay retinol for 3 months — here's what I upgraded to and why"</div>
+            <div class="hook-text">"I've been using Olay retinol for 3 months: here's what I upgraded to and why"</div>
             <div class="hook-note">Loyalty + upgrade narrative. Keep the Olay brand journey continuous.</div>
           </div>
         </div>
@@ -519,9 +516,9 @@
   </div>
 </section>
 
-<!-- ── TRIBES ── -->
+<!--  TRIBES  -->
 <section id="tribes">
-  <div class="section-eyebrow">Section 02 — Target Tribes</div>
+  <div class="section-eyebrow">Section 02: Target Tribes</div>
   <h2 class="section-title">Who we're talking to.</h2>
   <p class="section-sub">
     Beyond skin-intellectuals, Olay has identified 4 TikTok tribes with tailored messaging. Each tribe gets different creator types, different hooks, different product emphasis.
@@ -533,25 +530,25 @@
       <div class="tribe-tag">FinTok / Skinsurance</div>
       <div class="tribe-name">Financial wellness meets skincare</div>
       <div class="tribe-spike" style="color:#00C864;">12% BE organic · Already above benchmark · ADD PAID NOW</div>
-      <div class="tribe-desc">Financial wellness adjacency — "set yourself up for a prosperous future." Skincare as investment. Olay as the smart financial decision vs. expensive alternatives. This tribe is already hitting 12% BE organic — the signal is there, add paid amplification.</div>
+      <div class="tribe-desc">Financial wellness adjacency: "set yourself up for a prosperous future." Skincare as investment. Olay as the smart financial decision vs. expensive alternatives. This tribe is already hitting 12% BE organic: the signal is there, add paid amplification.</div>
       <ul class="tribe-hooks">
-        <li>Creators: Corporate Natalie, Vivian Tu (@YourRichBFF) — already in use</li>
+        <li>Creators: Corporate Natalie, Vivian Tu (@YourRichBFF): already in use</li>
         <li>Hook: "The ROI on this $25 serum vs. $300 treatments"</li>
-        <li>Hook: "Skincare as an investment — compounding returns"</li>
+        <li>Hook: "Skincare as an investment: compounding returns"</li>
         <li>Target: MMP + TikTok Shop tie-in. Campaign: July 2026</li>
       </ul>
     </div>
 
     <div class="tribe-card">
       <div class="tribe-tag">Longevity / Future Proof</div>
-      <div class="tribe-name">Proactive aging — science-first</div>
+      <div class="tribe-name">Proactive aging: science-first</div>
       <div class="tribe-spike">+900% interest spike P52W · Biggest trend in the category</div>
-      <div class="tribe-desc">The longevity trend is exploding — biohacking, proactive health optimization, cellular health. These are not traditional skincare buyers. They care about peptides, collagen, cellular re-energizing — which is exactly what Super Serum and MSC deliver. Ambassador: Arden Cho.</div>
+      <div class="tribe-desc">The longevity trend is exploding: biohacking, proactive health optimization, cellular health. These are not traditional skincare buyers. They care about peptides, collagen, cellular re-energizing: which is exactly what Super Serum and MSC deliver. Ambassador: Arden Cho.</div>
       <ul class="tribe-hooks">
         <li>Hashtags: #Longevity #Biohacking #HealthyAging</li>
-        <li>Hook: "Skincare at the cellular level — what's actually in your serum"</li>
+        <li>Hook: "Skincare at the cellular level: what's actually in your serum"</li>
         <li>Hook: "The longevity stack: what I take, what I put on my skin"</li>
-        <li>Campaign: August 2026 — Future Proof / Bounce Back</li>
+        <li>Campaign: August 2026: Future Proof / Bounce Back</li>
       </ul>
     </div>
 
@@ -559,12 +556,12 @@
       <div class="tribe-tag">Nostalgia</div>
       <div class="tribe-name">Millennials + early signs of aging</div>
       <div class="tribe-spike">1990s/2000s culture wave · Kelly Rowland partnership</div>
-      <div class="tribe-desc">Millennials who grew up with Olay are now at the age where they're dealing with early signs of aging. Nostalgia creates an emotional shortcut — "Mom used this. Now I understand why." Kelly Rowland partnership + VMAs integration + Walmart in-store.</div>
+      <div class="tribe-desc">Millennials who grew up with Olay are now at the age where they're dealing with early signs of aging. Nostalgia creates an emotional shortcut: "Mom used this. Now I understand why." Kelly Rowland partnership + VMAs integration + Walmart in-store.</div>
       <ul class="tribe-hooks">
         <li>Hashtags: #millennialtok #nostalgiatok</li>
-        <li>Hook: "My mom's been using this cream my whole life — I finally tried it"</li>
-        <li>Hook: "I grew up watching these commercials — here's the before/after"</li>
-        <li>Campaign: September 2026 — VMAs + Spotify/Sirius XM integration</li>
+        <li>Hook: "My mom's been using this cream my whole life: I finally tried it"</li>
+        <li>Hook: "I grew up watching these commercials: here's the before/after"</li>
+        <li>Campaign: September 2026: VMAs + Spotify/Sirius XM integration</li>
       </ul>
     </div>
 
@@ -572,24 +569,24 @@
       <div class="tribe-tag">Runner Tok</div>
       <div class="tribe-name">High-performance self-investors</div>
       <div class="tribe-spike">Crossover with fitness/performance lifestyle</div>
-      <div class="tribe-desc">These are not skincare shoppers — they're self-optimizers. They track their sleep (Oura Ring gifting in talks), train hard, and treat their skin the same way. NYC Marathon talkability + Hilton GRWM + Aire Ancient Baths. October–December campaign window.</div>
+      <div class="tribe-desc">These are not skincare shoppers: they're self-optimizers. They track their sleep (Oura Ring gifting in talks), train hard, and treat their skin the same way. NYC Marathon talkability + Hilton GRWM + Aire Ancient Baths. October–December campaign window.</div>
       <ul class="tribe-hooks">
-        <li>Oura Ring gifting (in talks) — wearable + skincare crossover</li>
-        <li>Hook: "My marathon recovery routine — skin included"</li>
-        <li>Hook: "I train my body like an athlete — my skin routine does the same"</li>
-        <li>Campaign: October–December 2026 — NYC Marathon activation</li>
+        <li>Oura Ring gifting (in talks): wearable + skincare crossover</li>
+        <li>Hook: "My marathon recovery routine: skin included"</li>
+        <li>Hook: "I train my body like an athlete: my skin routine does the same"</li>
+        <li>Campaign: October–December 2026: NYC Marathon activation</li>
       </ul>
     </div>
 
   </div>
 </section>
 
-<!-- ── COMPETITORS ── -->
+<!--  COMPETITORS  -->
 <section id="competitors">
-  <div class="section-eyebrow">Section 03 — Competitive Landscape</div>
+  <div class="section-eyebrow">Section 03: Competitive Landscape</div>
   <h2 class="section-title">Who we're up against.</h2>
   <p class="section-sub">
-    The anti-aging category on TikTok Shop has no clear #1 yet. These brands are moving fast — know their products and angles so Olay positions differently.
+    The anti-aging category on TikTok Shop has no clear #1 yet. These brands are moving fast: know their products and angles so Olay positions differently.
   </p>
 
   <div class="comp-grid">
@@ -598,9 +595,9 @@
       <div class="comp-product">Resurfacing Retinol Serum</div>
       <div class="comp-price">$16.97 · 1 fl oz</div>
       <ul class="comp-strengths">
-        <li>50+ dermatologist influencer partnerships — deep credibility moat</li>
+        <li>50+ dermatologist influencer partnerships: deep credibility moat</li>
         <li>Ceramides + barrier repair narrative dominates TikTok skincare conversation</li>
-        <li>Lowest price point in the category — mass accessible</li>
+        <li>Lowest price point in the category: mass accessible</li>
         <li>L'Oréal open affiliate program with structured TTS infrastructure</li>
       </ul>
       <div class="threat-level">
@@ -619,9 +616,9 @@
       <div class="comp-product">Collagen Bank + Rapid Wrinkle Repair</div>
       <div class="comp-price">$21.97–$34.99</div>
       <ul class="comp-strengths">
-        <li>Collagen Bank launched exclusively on TikTok Shop — platform-first strategy</li>
-        <li>58% of Gen Z worried about aging by 23 — prevention message lands</li>
-        <li>Strong "prevention not correction" for under-35s — direct Longevity tribe overlap</li>
+        <li>Collagen Bank launched exclusively on TikTok Shop: platform-first strategy</li>
+        <li>58% of Gen Z worried about aging by 23: prevention message lands</li>
+        <li>Strong "prevention not correction" for under-35s: direct Longevity tribe overlap</li>
         <li>Well-funded paid TTS campaigns</li>
       </ul>
       <div class="threat-level">
@@ -640,10 +637,10 @@
       <div class="comp-product">Retinol Correxion Line Smoothing</div>
       <div class="comp-price">$24.97</div>
       <ul class="comp-strengths">
-        <li>Claims 7× more potent retinol — direct head-to-head with Retinol24</li>
-        <li>Retinol patches going viral — unique format, hard to replicate</li>
+        <li>Claims 7× more potent retinol: direct head-to-head with Retinol24</li>
+        <li>Retinol patches going viral: unique format, hard to replicate</li>
         <li>Strong before/after content performance</li>
-        <li>Same price as Olay — direct comparison shopping</li>
+        <li>Same price as Olay: direct comparison shopping</li>
       </ul>
       <div class="threat-level">
         <span class="threat-label">Threat</span>
@@ -660,8 +657,8 @@
       <div class="comp-product">Pure Retinol Serum with Vitamin B3</div>
       <div class="comp-price">$42.99</div>
       <ul class="comp-strengths">
-        <li>"Medical-grade" perception — same Retinol + B3 as Olay at $43 vs. $25</li>
-        <li>Derm community recommends heavily — earned media machine</li>
+        <li>"Medical-grade" perception: same Retinol + B3 as Olay at $43 vs. $25</li>
+        <li>Derm community recommends heavily: earned media machine</li>
         <li>Price anchoring: makes Olay look accessible by comparison</li>
       </ul>
       <div class="threat-level">
@@ -679,7 +676,7 @@
       <div class="comp-product">Clinical 1% Retinol + BHA 2%</div>
       <div class="comp-price">$34–$58</div>
       <ul class="comp-strengths">
-        <li>Cult TikTok status — one of the most-recommended brands by creators</li>
+        <li>Cult TikTok status: one of the most-recommended brands by creators</li>
         <li>Ingredient transparency builds intense trust with educated buyers</li>
         <li>Science-first brand voice perfectly adapted to TikTok education format</li>
       </ul>
@@ -698,8 +695,8 @@
       <div class="comp-product">AGE-R Collagen Night Mask</div>
       <div class="comp-price">$28–$45</div>
       <ul class="comp-strengths">
-        <li>K-beauty trend wave — massive organic reach via aesthetic content</li>
-        <li>Collagen-first messaging aligns with Longevity tribe — direct overlap</li>
+        <li>K-beauty trend wave: massive organic reach via aesthetic content</li>
+        <li>Collagen-first messaging aligns with Longevity tribe: direct overlap</li>
         <li>PDRN and peptide credibility with skincare enthusiast creators</li>
       </ul>
       <div class="threat-level">
@@ -714,21 +711,21 @@
   </div>
 
   <div class="callout">
-    <strong>Olay's gap to own:</strong> None of these brands have the combination of clinical proof (97% saw results, 50% delayed cosmetic procedures) at a sub-$30 price. Do not compete on price — compete on <em>proven science</em>. That is the positioning gap.
+    <strong>Olay's gap to own:</strong> None of these brands have the combination of clinical proof (97% saw results, 50% delayed cosmetic procedures) at a sub-$30 price. Do not compete on price: compete on <em>proven science</em>. That is the positioning gap.
   </div>
 </section>
 
-<!-- ── WHAT'S WORKING / NOT ── -->
+<!--  WHAT'S WORKING / NOT  -->
 <section id="verdict">
-  <div class="section-eyebrow">Section 04 — Performance Audit</div>
+  <div class="section-eyebrow">Section 04: Performance Audit</div>
   <h2 class="section-title">What's working. What isn't.</h2>
   <p class="section-sub">Honest current state before the relaunch push. Reference this when briefing new team members or creating your first batch of creator content.</p>
 
   <div class="verdict-grid">
     <div class="verdict-col working">
-      <div class="verdict-heading">✓ What's Working</div>
+      <div class="verdict-heading"> What's Working</div>
       <ul class="verdict-list">
-        <li><strong>FinTok is already performing.</strong> FinTok / Skinsurance content hitting 12% BE and 5s watch time above benchmark — organically, before paid. This is the single strongest existing signal. Add paid now.</li>
+        <li><strong>FinTok is already performing.</strong> FinTok / Skinsurance content hitting 12% BE and 5s watch time above benchmark: organically, before paid. This is the single strongest existing signal. Add paid now.</li>
         <li><strong>87.8M organic posts on #OlayRetinol24.</strong> Unpaid creators are building demand every day. The Retinol24 product story sells itself.</li>
         <li><strong>Before/after content converts.</strong> "7 Night Challenge" format is the highest-converting structure. Creators documenting real results drive the most affiliate revenue.</li>
         <li><strong>Sensitive skin angle resonates.</strong> "No flaking, no purging" is a genuine differentiator vs. RoC and Neutrogena. This is a real USP.</li>
@@ -738,12 +735,12 @@
       </ul>
     </div>
     <div class="verdict-col not-working">
-      <div class="verdict-heading">✗ What Isn't Working</div>
+      <div class="verdict-heading"> What Isn't Working</div>
       <ul class="verdict-list">
         <li><strong>Creator network is massively under-scaled.</strong> Current: ~34 active creators. Benchmark (Tarte): 200+. At 34, Olay is structurally unable to generate the content volume TikTok Shop demands. This is the #1 fix.</li>
         <li><strong>Zero LIVE shopping program.</strong> LIVE is TikTok Shop's highest-converting format. Competitors run daily LIVE sessions. Olay has none.</li>
         <li><strong>Tribe-first TikTok strategy is under-served.</strong> FinTok, Runner Tok, and Longevity are the three under-served tribes with the most upside. Only FinTok has been tested.</li>
-        <li><strong>"Anti-aging" language pushes younger tribes away.</strong> Content should say "skin longevity," "proactive aging," "future-proof." The brand brief says "Aging Gracefully" over "old, but not old" — this needs to cascade into all creator briefs.</li>
+        <li><strong>"Anti-aging" language pushes younger tribes away.</strong> Content should say "skin longevity," "proactive aging," "future-proof." The brand brief says "Aging Gracefully" over "old, but not old": this needs to cascade into all creator briefs.</li>
         <li><strong>No TikTok-exclusive bundles.</strong> Halo heroes, virtual bundles, and 2-packs are called out in the digital playbook but don't exist on TTS yet.</li>
         <li><strong>AIGC content opportunity untapped.</strong> The brand actively wants AI-generated content and Pattern hasn't led here yet. Early mover advantage is available right now.</li>
         <li><strong>2-month content lead time rule not being followed.</strong> Every tentpole requires 2 months of content lead time for talkability. If you're not building content in August, you're not ready for Prime Big Deal Days in October.</li>
@@ -752,9 +749,9 @@
   </div>
 </section>
 
-<!-- ── AFFILIATE PYRAMID ── -->
+<!--  AFFILIATE PYRAMID  -->
 <section id="pyramid">
-  <div class="section-eyebrow">Section 05 — Creator Affiliate Pyramid</div>
+  <div class="section-eyebrow">Section 05: Creator Affiliate Pyramid</div>
   <h2 class="section-title">The creator architecture.</h2>
   <p class="section-sub">
     Olay's affiliate pyramid is defined. These are the actual names, tiers, and percentage allocations. Know them before outreach.
@@ -772,7 +769,7 @@
       </div>
 
       <div class="pyramid-row tier-skin">
-        <div class="pyramid-pct" style="-webkit-text-fill-color:var(--olay-pink);color:var(--olay-pink);background:none;">10%</div>
+        <div class="pyramid-pct" style="-webkit-text-fill-color:var(--olay-red);color:var(--olay-red);background:none;">10%</div>
         <div class="pyramid-tier-name">Skin Professionals (6–10 creators)</div>
         <div class="pyramid-names">
           <strong>Jackie Aina</strong> · <strong>Jane the Chemist</strong> · <strong>Practically Peyton</strong> · <strong>Nayamka Roberts</strong>
@@ -801,17 +798,17 @@
       <div class="pdeet-card">
         <div class="pdeet-label">Why TikTok works for Olay</div>
         <div class="pdeet-title">Affiliates = fastest feedback loop</div>
-        <div class="pdeet-desc">The best insight signal comes from affiliates — they give the fastest feedback loop on which content angles are landing. TikTok value: <strong style="color:var(--text)">volume + instant wins that can be replicated at scale</strong>. What works in one creator's video gets briefed to the next 10.</div>
+        <div class="pdeet-desc">The best insight signal comes from affiliates: they give the fastest feedback loop on which content angles are landing. TikTok value: <strong style="color:var(--text)">volume + instant wins that can be replicated at scale</strong>. What works in one creator's video gets briefed to the next 10.</div>
       </div>
       <div class="pdeet-card">
-        <div class="pdeet-label">Tier 1 — Celeb / Macro rule</div>
+        <div class="pdeet-label">Tier 1: Celeb / Macro rule</div>
         <div class="pdeet-title">Awareness + cultural credibility</div>
-        <div class="pdeet-desc">SMG anchors the brand. Kelly Rowland activates Nostalgia. Arden Cho activates Future Proof. These creators don't need to drive direct conversions — they create the cultural permission for the micro-tier to sell.</div>
+        <div class="pdeet-desc">SMG anchors the brand. Kelly Rowland activates Nostalgia. Arden Cho activates Future Proof. These creators don't need to drive direct conversions: they create the cultural permission for the micro-tier to sell.</div>
       </div>
       <div class="pdeet-card">
-        <div class="pdeet-label">Tier 2 — Skin professionals rule</div>
+        <div class="pdeet-label">Tier 2: Skin professionals rule</div>
         <div class="pdeet-title">Science credibility layer</div>
-        <div class="pdeet-desc">Jackie Aina + Jane the Chemist provide the derm-adjacent credibility that competes with CeraVe's moat. The "skin professional" tier speaks directly to the Skin-Intellectual core audience. <strong style="color:var(--text)">These are negotiated paid partnerships — budget accordingly.</strong></div>
+        <div class="pdeet-desc">Jackie Aina + Jane the Chemist provide the derm-adjacent credibility that competes with CeraVe's moat. The "skin professional" tier speaks directly to the Skin-Intellectual core audience. <strong style="color:var(--text)">These are negotiated paid partnerships: budget accordingly.</strong></div>
       </div>
       <div class="pdeet-card">
         <div class="pdeet-label">Tribe matching rule</div>
@@ -822,16 +819,16 @@
   </div>
 </section>
 
-<!-- ── CAMPAIGN CALENDAR ── -->
+<!--  CAMPAIGN CALENDAR  -->
 <section id="calendar">
-  <div class="section-eyebrow">Section 06 — H2 2026 Campaign Calendar</div>
+  <div class="section-eyebrow">Section 06: H2 2026 Campaign Calendar</div>
   <h2 class="section-title">The plan, month by month.</h2>
   <p class="section-sub">
     Four campaigns. Each with a distinct tribe, creator roster, and channel mix. <strong>2-month content lead time required before every tentpole.</strong> If it's not briefed today, it's already late.
   </p>
 
   <div class="callout">
-    <strong>Non-negotiable rule:</strong> 2-month content lead time required before every tentpole to maximize talkability. Prime Big Deal Days is October — content needs to be live by August.
+    <strong>Non-negotiable rule:</strong> 2-month content lead time required before every tentpole to maximize talkability. Prime Big Deal Days is October: content needs to be live by August.
   </div>
 
   <div class="calendar-grid">
@@ -843,14 +840,14 @@
       <div>
         <div class="cal-signal">12% BE organic · Add paid now</div>
         <div class="cal-theme">FinTok × Skinsurance</div>
-        <div class="cal-desc">Financial wellness + skincare investment angle. Organic is already hitting 12% BE with 5s watch time above benchmark — now amplify with paid. The insight signal is clear.</div>
+        <div class="cal-desc">Financial wellness + skincare investment angle. Organic is already hitting 12% BE with 5s watch time above benchmark: now amplify with paid. The insight signal is clear.</div>
         <div class="cal-creators">
           <span class="creator-chip featured">Corporate Natalie</span>
           <span class="creator-chip featured">Vivian Tu @YourRichBFF</span>
           <span class="creator-chip">FinTok micro-creators</span>
         </div>
         <div class="pill-row">
-          <span class="pill pill-pink">MMP + TikTok Shop tie-in</span>
+          <span class="pill pill-red">MMP + TikTok Shop tie-in</span>
           <span class="pill pill-neutral">Retinol24 hero product</span>
         </div>
       </div>
@@ -861,7 +858,7 @@
         <div class="cal-month">August 2026</div>
       </div>
       <div>
-        <div class="cal-theme">Future Proof / Bounce Back — Super Serum relaunch</div>
+        <div class="cal-theme">Future Proof / Bounce Back: Super Serum relaunch</div>
         <div class="cal-desc">National relaunch moment for Super Serum. Arden Cho as national ambassador. WOW Display + superior eContent at retail. PR event, sweepstakes, regimen mailers. This is the biggest campaign of H2 2026.</div>
         <div class="cal-creators">
           <span class="creator-chip featured">Arden Cho (national ambassador)</span>
@@ -883,7 +880,7 @@
         <div class="cal-month">September 2026</div>
       </div>
       <div>
-        <div class="cal-theme">Nostalgia — VMAs + Kelly Rowland</div>
+        <div class="cal-theme">Nostalgia: VMAs + Kelly Rowland</div>
         <div class="cal-desc">Millennials hit with early signs of aging, rediscovering the brand their moms used. Kelly Rowland partnership anchors cultural relevance. Walmart in-store and on-site activation. VMAs integration, Sirius XM, and Spotify nostalgia playlist integrations.</div>
         <div class="cal-creators">
           <span class="creator-chip featured">Kelly Rowland</span>
@@ -892,7 +889,7 @@
         </div>
         <div class="cal-hashtags">#millennialtok #nostalgiatok</div>
         <div class="pill-row" style="margin-top:10px;">
-          <span class="pill pill-pink">VMAs integration</span>
+          <span class="pill pill-red">VMAs integration</span>
           <span class="pill pill-neutral">Spotify / Sirius XM</span>
           <span class="pill pill-neutral">Walmart in-store</span>
         </div>
@@ -913,7 +910,7 @@
           <span class="creator-chip featured">Hilton GRWM</span>
         </div>
         <div class="pill-row" style="margin-top:10px;">
-          <span class="pill pill-pink">NYC Marathon talkability</span>
+          <span class="pill pill-red">NYC Marathon talkability</span>
           <span class="pill pill-coral">Prime Big Deal Days (Oct)</span>
           <span class="pill pill-coral">T12 (Nov)</span>
           <span class="pill pill-neutral">6s–15s paid social</span>
@@ -923,7 +920,7 @@
 
   </div>
 
-  <h3 style="font-size:1rem;color:var(--muted);text-transform:uppercase;letter-spacing:1.5px;font-family:monospace;margin-top:48px;margin-bottom:16px;">Tentpoles — 2-month lead time required</h3>
+  <h3 style="font-size:1rem;color:var(--muted);text-transform:uppercase;letter-spacing:1.5px;font-family:monospace;margin-top:48px;margin-bottom:16px;">Tentpoles: 2-month lead time required</h3>
   <div class="tentpoles-row">
     <div class="tentpole">
       <div class="tentpole-month">October</div>
@@ -948,12 +945,12 @@
   </div>
 </section>
 
-<!-- ── DIGITAL PLAYBOOK ── -->
+<!--  DIGITAL PLAYBOOK  -->
 <section id="playbook">
-  <div class="section-eyebrow">Section 07 — Digital Playbook to Win</div>
+  <div class="section-eyebrow">Section 07: Digital Playbook to Win</div>
   <h2 class="section-title">The 4-pillar system.</h2>
   <p class="section-sub">
-    Olay's four-pillar digital playbook. Every campaign should be mapped against all four — not just one or two.
+    Olay's four-pillar digital playbook. Every campaign should be mapped against all four: not just one or two.
   </p>
 
   <div class="pillars-grid">
@@ -980,9 +977,9 @@
   </div>
 </section>
 
-<!-- ── PATTERN OPPORTUNITIES ── -->
+<!--  PATTERN OPPORTUNITIES  -->
 <section id="opportunities">
-  <div class="section-eyebrow">Section 08 — Pattern Opportunities</div>
+  <div class="section-eyebrow">Section 08: Pattern Opportunities</div>
   <h2 class="section-title">Where we can win.</h2>
   <p class="section-sub">
     Three specific plays where Pattern has first-mover advantage right now. These came directly from the brand brief.
@@ -992,24 +989,24 @@
     <div class="opp-card">
       <div class="opp-tag">Opportunity 01</div>
       <div class="opp-title">Affiliate-to-lab content series</div>
-      <div class="opp-desc">Brand is open to a format where affiliate creators are brought into Olay's science and product development — "affiliate meets R&D." Strong creative differentiator vs. every other skincare brand on TikTok that just sends samples. Creates the kind of educational, behind-the-scenes content that drives deep engagement and long-term brand trust. <strong style="color:var(--text);">Pattern should pitch and lead this.</strong></div>
+      <div class="opp-desc">Brand is open to a format where affiliate creators are brought into Olay's science and product development: "affiliate meets R&D." Strong creative differentiator vs. every other skincare brand on TikTok that just sends samples. Creates the kind of educational, behind-the-scenes content that drives deep engagement and long-term brand trust. <strong style="color:var(--text);">Pattern should pitch and lead this.</strong></div>
     </div>
     <div class="opp-card">
       <div class="opp-tag">Opportunity 02</div>
       <div class="opp-title">AIGC production</div>
-      <div class="opp-desc">Olay actively wants high-quality AI-generated content and has flagged it as an early-mover advantage. This is explicitly called out in the brand brief. Pattern can lead AIGC production — AI-generated demo content, AI-enhanced before/after creative, AI voiceover + visual. <strong style="color:var(--text);">Brand loves it. We haven't done it yet. Start now.</strong></div>
+      <div class="opp-desc">Olay actively wants high-quality AI-generated content and has flagged it as an early-mover advantage. This is explicitly called out in the brand brief. Pattern can lead AIGC production: AI-generated demo content, AI-enhanced before/after creative, AI voiceover + visual. <strong style="color:var(--text);">Brand loves it. We haven't done it yet. Start now.</strong></div>
     </div>
     <div class="opp-card">
       <div class="opp-tag">Opportunity 03</div>
       <div class="opp-title">Tribe-first TikTok strategy</div>
-      <div class="opp-desc">FinTok, Runner Tok, and Longevity are the three explicitly under-served tribes. Only FinTok has been tested (and it's already outperforming). Pattern can own the playbook for how to systematically activate each tribe — creator briefs, hashtag strategy, content cadence, and paid amplification timing. <strong style="color:var(--text);">This is our differentiated POV on the brand.</strong></div>
+      <div class="opp-desc">FinTok, Runner Tok, and Longevity are the three explicitly under-served tribes. Only FinTok has been tested (and it's already outperforming). Pattern can own the playbook for how to systematically activate each tribe: creator briefs, hashtag strategy, content cadence, and paid amplification timing. <strong style="color:var(--text);">This is our differentiated POV on the brand.</strong></div>
     </div>
   </div>
 </section>
 
-<!-- ── WORKFLOW ── -->
+<!--  WORKFLOW  -->
 <section id="workflow">
-  <div class="section-eyebrow">Section 09 — Weekly Workflow</div>
+  <div class="section-eyebrow">Section 09: Weekly Workflow</div>
   <h2 class="section-title">How to run this week to week.</h2>
   <p class="section-sub">The weekly operating cadence. This is how you stay ahead of the 2-month lead time rule and keep creator momentum building.</p>
 
@@ -1017,7 +1014,7 @@
     <div class="workflow-step">
       <div class="step-number">1</div>
       <div class="step-content">
-        <div class="step-title">Monday — Content review + creator check-ins</div>
+        <div class="step-title">Monday: Content review + creator check-ins</div>
         <div class="step-desc">Review last week's affiliate content performance in TikTok Shop Affiliate Center. Flag top 3 videos by GMV and view-to-purchase rate. Check-in with creators who received product but haven't posted. Log in the tracker.</div>
         <div class="step-detail">Tool: TTS Affiliate Center → Content Performance tab → filter last 7 days. Export top performers for Spark Ad consideration. Check against tribe alignment for the active campaign month.</div>
       </div>
@@ -1025,7 +1022,7 @@
     <div class="workflow-step">
       <div class="step-number">2</div>
       <div class="step-content">
-        <div class="step-title">Tuesday &amp; Thursday — LIVE shopping sessions</div>
+        <div class="step-title">Tuesday &amp; Thursday: LIVE shopping sessions</div>
         <div class="step-desc">Two LIVE sessions per week at launch. Lead with the active campaign's hero product. Use a LIVE-exclusive flash discount code for urgency. Target: 45–75 min per session.</div>
         <div class="step-detail">Format: 10 min intro → 20 min demo (before/after) → 15 min Q&A → 10 min close with LIVE-only code. Best time: 7–9pm. Super Serum relaunch month (Aug): every LIVE should feature Super Serum first.</div>
       </div>
@@ -1033,7 +1030,7 @@
     <div class="workflow-step">
       <div class="step-number">3</div>
       <div class="step-content">
-        <div class="step-title">Wednesday — Tribe-matched creator outreach</div>
+        <div class="step-title">Wednesday: Tribe-matched creator outreach</div>
         <div class="step-desc">10–15 new creator prospects per week aligned to the active tribe campaign. FinTok month = finance/budget creators. Longevity month = biohacking/wellness creators. Nostalgia = millennial lifestyle creators. Target: 3 new sign-ups per week.</div>
         <div class="step-detail">Search terms per tribe: FinTok (#skinsurance #skinvestment) · Longevity (#biohacking #longevity #healthyaging) · Nostalgia (#millennialtok #nostalgiatok) · Runner (#runnertok #marathontraining). Use Creator Marketplace for verified profiles.</div>
       </div>
@@ -1041,7 +1038,7 @@
     <div class="workflow-step">
       <div class="step-number">4</div>
       <div class="step-content">
-        <div class="step-title">Friday — Spark Ads + content lead time check</div>
+        <div class="step-title">Friday: Spark Ads + content lead time check</div>
         <div class="step-desc">Review Spark Ads performance. Top videos (CTR 2%+, CVR 4%+) get additional budget. Review the 2-month lead time rule: what tentpole is 8 weeks out? Is content already in market to build talkability?</div>
         <div class="step-detail">Budget rule: 70% creator gifting/commission · 20% Spark Ads · 10% Shop Ads. Tentpole check: if the next tentpole is 8 weeks away and content isn't live yet, raise a flag immediately.</div>
       </div>
@@ -1049,17 +1046,17 @@
     <div class="workflow-step">
       <div class="step-number">5</div>
       <div class="step-content">
-        <div class="step-title">Friday — Weekly report</div>
-        <div class="step-desc">Total GMV, active creator count, top-performing video, affiliate CVR, LIVE GMV, Spark Ad ROAS. Compare against weekly targets. Flag anomalies. Note which tribe content is outperforming — feed back into next week's briefs.</div>
+        <div class="step-title">Friday: Weekly report</div>
+        <div class="step-desc">Total GMV, active creator count, top-performing video, affiliate CVR, LIVE GMV, Spark Ad ROAS. Compare against weekly targets. Flag anomalies. Note which tribe content is outperforming: feed back into next week's briefs.</div>
         <div class="step-detail">Insight loop: what angle worked this week → brief the next 10 creators on it. TikTok value = volume + instant wins that replicate at scale. The feedback loop from affiliates is Olay's fastest signal.</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ── KPIs ── -->
+<!--  KPIs  -->
 <section id="kpis">
-  <div class="section-eyebrow">Section 10 — KPIs &amp; Tracking</div>
+  <div class="section-eyebrow">Section 10: KPIs &amp; Tracking</div>
   <h2 class="section-title">How we measure success.</h2>
   <p class="section-sub">Track weekly. Red = escalate this week. Amber = watch. Green = on track.</p>
 
@@ -1150,19 +1147,19 @@
   </div>
 
   <div class="callout">
-    <strong>Pattern's edge:</strong> Olay has the clinical proof. We have the creator infrastructure and tribe-first playbook. Three things to lead on right now: <strong style="color:var(--text);">(1) Scale micro-WHO tribe creators to 15+ per quarter. (2) Start AIGC production — the brand wants it and no one else is doing it. (3) Build paid amplification behind FinTok content — organic is already at 12% BE.</strong>
+    <strong>Pattern's edge:</strong> Olay has the clinical proof. We have the creator infrastructure and tribe-first playbook. Three things to lead on right now: <strong style="color:var(--text);">(1) Scale micro-WHO tribe creators to 15+ per quarter. (2) Start AIGC production: the brand wants it and no one else is doing it. (3) Build paid amplification behind FinTok content: organic is already at 12% BE.</strong>
   </div>
 </section>
 
-<!-- ── FOOTER ── -->
+<!--  FOOTER  -->
 <footer>
   <div>
     <div class="footer-brand"><span>pattern</span> × olay tiktok shop</div>
-    <div style="font-size:0.8125rem;color:var(--faint);margin-top:4px;">Internal Operator Playbook · Confidential — Not for distribution</div>
+    <div style="font-size:0.8125rem;color:var(--faint);margin-top:4px;">Internal Operator Playbook · Confidential: Not for distribution</div>
   </div>
   <div class="footer-info">
-    Olay × Pattern — Agency Onboarding · May 18, 2026<br>
-    Pattern Technologies — Social Commerce<br>
+    Olay × Pattern: Agency Onboarding · May 18, 2026<br>
+    Pattern Technologies: Social Commerce<br>
     saat.desai@pattern.com
   </div>
 </footer>
